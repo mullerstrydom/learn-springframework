@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: EN
+my:
+  db:
+    username: yml_user
+    password: yml_password
+    url: yml_url
