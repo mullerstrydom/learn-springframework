@@ -4,8 +4,8 @@ You can specify properties using
 - environment variables    (ie. MY_DB_USERNAME=env_var_username)
 - cmd line arguments       (ie. --my.db.username=cmdline_arg_username)
 
-Properties file is overridden by environmenet variables.
-Environment variables is overriden by cmd line arguments.
+Properties file is overridden by environment variables.
+Environment variables is overridden by cmd line arguments.
 
 Use the `@Value` annotation to get the value from properties
 Remember the `{}` for the syntax for `@Value`, ie 
@@ -13,10 +13,14 @@ Remember the `{}` for the syntax for `@Value`, ie
 @Value("${my.db.username}") String username
 ``` 
 
-### Properties file
+## Properties file
 Use the annotation `@PropertySource("classpath:datasource.properties")` to define the properties file
 
-### Environment variables
+### application.properties
+The application.properties is automatically loaded by spring. So if you define your properties in here, you do not 
+have to specify the `@PropertySource`.
+
+## Environment variables
 The naming convention for env variables is all uppercase and `.` is replaced with `_`, ie:
 ```
 # property file
@@ -26,7 +30,7 @@ db.username=
 export DB_USERNAME=
 ```
 
-### Commandline arguments
+## Commandline arguments
 Commandline arguments are prefixed with `--`
 ```
 # property file
