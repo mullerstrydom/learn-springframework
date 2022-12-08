@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="greetingServiceImpl" class="learn.example.springframework.configurationxml.services.GreetingServiceImpl"/>
+    <bean name="greetingControllerImpl" class="learn.example.springframework.configurationxml.controllers.GreetingControllerImpl">
+        <constructor-arg index="0" type="learn.example.springframework.configurationxml.services.GreetingService" ref="greetingServiceImpl"/>
+    </bean>
+
+</beans>
